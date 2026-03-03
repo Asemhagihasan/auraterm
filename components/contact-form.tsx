@@ -24,7 +24,6 @@ export function ContactForm() {
     // Simulate network request — swap with your real API later
     setTimeout(() => setStatus("sent"), 1500);
   }
-
   if (status === "sent") {
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
