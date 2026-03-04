@@ -77,10 +77,12 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-6 flex items-center gap-3">
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-50 text-navy-600 dark:bg-navy-800 dark:text-navy-300">
         <Icon className="h-5 w-5" />
       </div>
-      <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
+      <h2 className="text-2xl font-bold tracking-tight text-foreground">
+        {title}
+      </h2>
     </div>
   );
 }
@@ -123,9 +125,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <StaggerChildren className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {service.mainMethods.map((method) => (
               <StaggerItem key={method}>
-                <Card className="border-border/50">
+                <Card className="border-border">
                   <CardContent className="flex items-center gap-3 p-5">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy-50 dark:bg-navy-800 text-xs font-bold text-red-accent">
                       ✓
                     </span>
                     <span className="text-sm font-medium">{method}</span>
@@ -241,7 +243,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           <StaggerChildren className="grid gap-4 sm:grid-cols-2">
             {service.imageIdeas.map((idea) => (
               <StaggerItem key={idea}>
-                <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-border bg-muted/50">
+                <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-border bg-secondary/50 dark:bg-secondary/30">
                   <p className="px-6 text-center text-sm text-muted-foreground italic">
                     {idea}
                   </p>
@@ -256,27 +258,36 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         {/* 9. CTA */}
         <section className="py-16 sm:py-20">
           <AnimateIn direction="up">
-            <Card className="overflow-hidden border-primary/20 bg-primary/5">
+            <Card className="overflow-hidden border-red-accent/20 bg-linear-to-br from-navy-600 to-navy-700">
               <CardContent className="flex flex-col items-center gap-6 p-8 text-center sm:p-12">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-accent text-white">
                   <Phone className="h-7 w-7" />
                 </div>
-                <CardTitle className="text-2xl sm:text-3xl">
+                <CardTitle className="text-2xl text-white sm:text-3xl">
                   Need {service.serviceTitle}?
                 </CardTitle>
-                <p className="max-w-xl text-muted-foreground">
+                <p className="max-w-xl text-navy-200">
                   Our certified engineers are ready to help. Get in touch for a
                   free consultation, cost estimate or to schedule an on-site
                   visit.
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
-                  <Button asChild size="lg">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-red-accent text-white hover:bg-red-accent-dark"
+                  >
                     <Link href="/contact">
                       Request a Quote
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border-navy-400/50 bg-transparent text-white hover:bg-navy-500/50"
+                  >
                     <Link href="/services">View All Services</Link>
                   </Button>
                 </div>
@@ -291,7 +302,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             <Separator />
             <section className="py-16 sm:py-20">
               <AnimateIn direction="up">
-                <h2 className="mb-8 text-2xl font-bold tracking-tight">
+                <h2 className="mb-8 text-2xl font-bold tracking-tight text-foreground">
                   Other Services
                 </h2>
               </AnimateIn>
@@ -299,7 +310,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 {otherServices.slice(0, 3).map((s) => (
                   <StaggerItem key={s.id}>
                     <Link href={`/services/${s.slug}`} className="group block">
-                      <Card className="border-border/50 transition-colors group-hover:border-primary/30">
+                      <Card className="border-border transition-colors group-hover:border-navy-300 dark:group-hover:border-navy-500">
                         <CardHeader className="pb-2">
                           <CardTitle className="text-base">
                             {s.serviceTitle}

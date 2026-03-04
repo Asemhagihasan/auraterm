@@ -17,10 +17,10 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <section className="border-b bg-muted/30 py-16 sm:py-20">
+      <section className="border-b border-border bg-secondary/50 dark:bg-secondary/30 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <AnimateIn direction="up">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Industrial Services
             </h1>
           </AnimateIn>

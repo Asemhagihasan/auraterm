@@ -20,22 +20,26 @@ export default function ContactPage() {
   return (
     <>
       {/* ─── Hero ─── */}
-      <section className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-primary/5 via-background to-background">
+      <section className="relative overflow-hidden bg-navy-600">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"
+          className="pointer-events-none absolute inset-0 z-0"
+          style={{
+            background:
+              "linear-gradient(135deg, #142a4a 0%, #1a365d 50%, #2d5185 100%)",
+          }}
         />
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <AnimateIn direction="up">
-            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-primary">
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-red-accent-light">
               Get in Touch
             </p>
-            <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Let&apos;s Discuss Your Project
             </h1>
           </AnimateIn>
           <AnimateIn direction="up" delay={0.1}>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-200">
               Whether you need a rapid leak test, scheduled inspection or a full
               service quote — fill out the form and our engineers will get back
               to you within 24 hours.
@@ -51,8 +55,8 @@ export default function ContactPage() {
             {/* Form — takes 3/5 */}
             <div className="lg:col-span-3">
               <AnimateIn direction="up">
-                <div className="rounded-2xl border border-border/60 bg-card p-6 sm:p-10">
-                  <h2 className="mb-1 text-xl font-semibold">
+                <div className="rounded-2xl border border-border bg-card p-6 sm:p-10">
+                  <h2 className="mb-1 text-xl font-semibold text-foreground">
                     Send Us a Message
                   </h2>
                   <p className="mb-8 text-sm text-muted-foreground">
@@ -75,7 +79,7 @@ export default function ContactPage() {
                     </h3>
                     <ul className="space-y-5">
                       <li className="group flex items-start gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-600 dark:bg-navy-800 dark:text-navy-300">
                           <Mail className="h-5 w-5" />
                         </div>
                         <div>
@@ -84,7 +88,7 @@ export default function ContactPage() {
                           </p>
                           <a
                             href={`mailto:${siteConfig.email}`}
-                            className="inline-flex items-center gap-1 text-foreground transition-colors hover:text-primary"
+                            className="inline-flex items-center gap-1 text-foreground transition-colors hover:text-navy-600"
                           >
                             {siteConfig.email}
                             <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -93,7 +97,7 @@ export default function ContactPage() {
                       </li>
 
                       <li className="group flex items-start gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-600 dark:bg-navy-800 dark:text-navy-300">
                           <Phone className="h-5 w-5" />
                         </div>
                         <div>
@@ -102,7 +106,7 @@ export default function ContactPage() {
                           </p>
                           <a
                             href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                            className="inline-flex items-center gap-1 text-foreground transition-colors hover:text-primary"
+                            className="inline-flex items-center gap-1 text-foreground transition-colors hover:text-navy-600"
                           >
                             {siteConfig.phone}
                             <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -111,7 +115,7 @@ export default function ContactPage() {
                       </li>
 
                       <li className="flex items-start gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-600 dark:bg-navy-800 dark:text-navy-300">
                           <MapPin className="h-5 w-5" />
                         </div>
                         <div>
@@ -166,7 +170,7 @@ export default function ContactPage() {
                       ].map((item) => (
                         <div
                           key={item.label}
-                          className="rounded-lg border border-border/50 bg-muted/30 px-4 py-3"
+                          className="rounded-lg border border-border bg-secondary/50 dark:bg-secondary/30 px-4 py-3"
                         >
                           <dt className="text-2xl font-bold text-primary">
                             {item.stat}

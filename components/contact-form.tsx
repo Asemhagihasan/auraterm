@@ -27,10 +27,10 @@ export function ContactForm() {
   if (status === "sent") {
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
-        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
           <CheckCircle2 className="h-8 w-8" />
         </div>
-        <h3 className="text-xl font-semibold">Message Sent!</h3>
+        <h3 className="text-xl font-semibold text-foreground">Message Sent!</h3>
         <p className="max-w-sm text-muted-foreground">
           Thank you for reaching out. Our team will review your inquiry and get
           back to you within 24 hours.
@@ -131,7 +131,7 @@ export function ContactForm() {
       <Button
         type="submit"
         size="lg"
-        className="w-full sm:w-auto"
+        className="w-full sm:w-auto bg-red-accent text-white hover:bg-red-accent-dark"
         disabled={status === "sending"}
       >
         {status === "sending" ? (
